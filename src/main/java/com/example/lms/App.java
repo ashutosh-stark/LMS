@@ -3,6 +3,7 @@ package com.example.lms;
 
 
 import java.util.Date;
+import java.util.UUID;
 
 import com.example.lms.books.BookFactory;
 import com.example.lms.books.Books;
@@ -11,6 +12,8 @@ import com.example.lms.lending.CheckOutService;
 import com.example.lms.lending.Checkout;
 import com.example.lms.libary.Libary;
 import com.example.lms.members.Members;
+import com.example.lms.transfer.TransferRequest;
+import com.example.lms.transfer.TransferService;
 
 /**
  * Driver Class
@@ -18,6 +21,8 @@ import com.example.lms.members.Members;
  */
 public class App 
 {
+
+   
     public static void main( String[] args )
     {
         
@@ -57,6 +62,23 @@ public class App
 
           System.out.println(checkOutService.returnBook(checkout2, java.util.Arrays.asList(effectiveJava,HarryPoter), m1Members, inventory));
         
+          // In order to create a diffrent branch we can create a diffrent 
+          // libary object with diffrent inventory
+          Inventory cityLibaryInventory = new Inventory();
+          Libary cityLibary2 = new Libary(0, null, cityLibaryInventory);
 
+          TransferRequest transferRequest = new TransferRequest(UUID.randomUUID().toString(),
+          cityLibary2, libary, "Harry Poter",4);
+
+
+          TransferRequest transferRequest2 = new TransferRequest(UUID.randomUUID().toString(),
+          cityLibary2, libary, "Effective Java",100);
+
+          TransferService transferService = new TransferService();
+          transferService.executeInterTransfer(transferRequest);
+          transferService.executeInterTransfer(transferRequest2);
+
+
+          
     }
 }

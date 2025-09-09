@@ -22,7 +22,7 @@ private TransferStatus transferStatus;
     
 
 public TransferRequest(String transferId, Libary requestBranch, Libary fullfilingBranch, String bookRequested, 
-int copies, TransferStatus transferStatus) {
+int copies) {
     this.transferId = transferId;
     this.requestBranch = requestBranch;
     this.fullfilingBranch = fullfilingBranch;
