@@ -23,12 +23,8 @@ public class Inventory {
     // So the inventory will be directly intracting with the book
     // Adding the books into the inventory
 
-    public Inventory( Date dateAdded, Date lastAdded, int inStock, boolean Available) {
+    public Inventory() {
         this.stock = new HashMap<>();
-        this.dateAdded = dateAdded;
-        this.lastAdded = lastAdded;
-        this.inStock = inStock;
-        this.Available = Available;
     }
 
    public void addBooks(Books book){
@@ -110,11 +106,11 @@ public class Inventory {
 
     }
 
-    public List<Books> getAllBooksByPublicationYear(Date publicationYear){
+    public List<Books> getAllBooksByPublicationYear(int publicationYear){
         List<Books> booksList = new ArrayList<>();
         for(Map.Entry<Books,Integer> mp: stock.entrySet()){
             Books book = mp.getKey();
-            if(publicationYear != null && book.getPublicationYear().equals(publicationYear)){
+            if(book.getPublicationYear() == (publicationYear)){
               booksList.add(book);
             }
         }

@@ -12,6 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Checkout{
+    
     private String transactionId;
     private List<Books> borrwBooks;
     private Members members;
@@ -19,6 +20,7 @@ public class Checkout{
     private Date borrowDate;
     private LendingStatus status;
     private Date actualReturnDate;
+
 
 
 }

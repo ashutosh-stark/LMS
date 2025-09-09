@@ -13,9 +13,9 @@ public abstract class Books {
     private String title;
     private String author;
     private String isbn;
-    private Date publicationYear;
+    private int publicationYear;
 
-    public Books(String title, String author, String isbn, Date publicationYear) {
+    public Books(String title, String author, String isbn, int publicationYear) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;

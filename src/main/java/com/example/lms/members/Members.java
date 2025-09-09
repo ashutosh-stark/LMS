@@ -1,5 +1,6 @@
 package com.example.lms.members;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.lms.lending.Checkout;
@@ -33,11 +34,11 @@ public class Members {
     }
 
     // Constructor
-    public Members(int id, String name, String address, List<Checkout> transactionHistory) {
+    public Members(int id, String name, String address) {
         this.id = id;
         this.name = name;
         this.address = address;
-        this.TransactionHistory = transactionHistory;
+        this.TransactionHistory = new ArrayList<>();
     }
 
 }

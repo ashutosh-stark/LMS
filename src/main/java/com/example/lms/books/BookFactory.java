@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class BookFactory {
 
-    public static Books createBook(String type, String title, String author, String isbn, Date year, String extra) {
+    public static Books createBook(String type, String title, String author, String isbn, int year, String extra) {
         switch (type.toLowerCase()) {
             case "physical":
                 return new PhysicalBook(title, author, isbn, year);
